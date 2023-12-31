@@ -1,10 +1,10 @@
 <?php
-require_once('config.php');
+require_once('../config/config.php');
 
 // CONNNECTION TO MYSQL
 $connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // LOG CONNECTION ERRORS
-echo !$connection ? 'Connection to DB error' . mysqli_connect_error() : 'Connected';
+echo !$connection ? mysqli_connect_error() : null;
 
 ?>
