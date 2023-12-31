@@ -14,14 +14,7 @@
                     <h1 class="page-header" style="color: #777;">
                         Welcome, User!
                     </h1>
-                    <ol class="breadcrumb" style="background-color: transparent;">
-                        <li>
-                            <i class="fa fa-dashboard"></i> <a href="#">Dashboard</a>
-                        </li>
-                        <li class="active">
-                            <i class="fa fa-file"></i> Blank Page
-                        </li>
-                    </ol>
+
                 </div>
             </div>
             <!-- /.row -->
