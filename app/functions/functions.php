@@ -42,7 +42,7 @@ function renderPosts()
         $result = mysqli_stmt_get_result($stmt);
 
         while ($row = mysqli_fetch_assoc($result)) {
-                $postTemplate .= getPostsTemplate($row);
+            $postTemplate .= getPostsTemplate($row);
         }
     } else {
 
@@ -64,19 +64,22 @@ function getPostsTemplate($row)
     $postCreator = $row['POST_CREATOR'];
     $postDate = $row['POST_DATE'];
     $postImage = $row['POST_IMAGE'];
-    $postContent = htmlspecialchars(strip_tags($row['POST_CONTENT']));
     $postViews = $row['POST_VIEWS'];
     $postTags = $row['POST_TAGS'];
     $postComments = $row['POST_COMMENTS'];
+
+    $imagePath = $postImage ? "../../assets/images/$postImage" : "http://placehold.it/900x300";
+    $postContent = htmlspecialchars(strip_tags($row['POST_CONTENT']));
 
     return "
         <h2><a href='#'>$postTitle</a></h2>
         <p class='lead'>by <a href='index.php'>$postCreator</a></p>
         <p><span class='glyphicon glyphicon-time'></span> Posted on $postDate</p>
         <hr>
-        <img class='img-responsive' src='http://placehold.it/900x300' alt=''>
+        <img class='img-responsive' style='min-width: 750px; max-width: 750px; min-height: 250px; max-height: 250px;'  src='$imagePath' alt='post image'>
         <hr>
         <p>$postContent</p>
         <a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>";
 }
+
 ?>

@@ -33,10 +33,10 @@
             </ul>
 
         </div>
+        
         <?php include_once('../templates/sidebar.php'); ?>
 
     </div>
-    <!-- /.row -->
 
     <hr>
 
