@@ -14,7 +14,7 @@
                     <h1 class="page-header" style="color: #777;">
                         Welcome, User!
                     </h1>
-
+                    <?php include_once('./pages/categories.php'); ?>
                 </div>
             </div>
             <!-- /.row -->
