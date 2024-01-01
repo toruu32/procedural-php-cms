@@ -19,8 +19,9 @@
                             <label for="addCategory" style="color: #777;">Category Name</label>
                             <input type="text" class="form-control" id="addCategory" name="categoryName" placeholder="Enter category name">
                         </div>
-                        <?php addCategory(); ?>
+                        
                         <button type="submit" name="submit" class="btn btn-primary">Add Category</button>
+                        <?php manageCategoryList(); ?>
                     </form>
                 </div>  
                 <div class="col-lg-6">
@@ -32,6 +33,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody class="text-warning">

@@ -96,7 +96,9 @@ function categoriesList()
             echo '<tr>';
             echo "<td>$categoryId</td>";
             echo "<td>$categoryName</td>";
+            echo "<td><a href='categories.php?delete=$categoryId'>Delete</a></td>";
             echo '<tr>';
+
         }
     } else {
         die('Statement preparation failed: ' . mysqli_error($connection));
@@ -105,7 +107,7 @@ function categoriesList()
     mysqli_stmt_close($stmt);
 };
 
-function addCategory()
+function manageCategoryList()
 {
     global $connection;
 
@@ -129,7 +131,16 @@ function addCategory()
             echo 'Empty input';
         }
     }
+
+    if(isset($_GET['delete'])) {
+        $categoryId =  $_GET['delete'];
+        $query = "DELETE FROM CATEGORIES WHERE CATEGORY_ID = $categoryId";
+        if($stmt = mysqli_prepare($connection, $query)) {
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
+    }
 };
 
 
-?>
+?>  
